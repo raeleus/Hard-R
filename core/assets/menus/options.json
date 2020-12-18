@@ -11,7 +11,7 @@
 						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.Label",
 						"name": "default"
 					},
-					"text": "Options",
+					"text": "options",
 					"textAlignment": 8,
 					"ellipsis": false,
 					"ellipsisString": "...",
@@ -59,7 +59,7 @@
 									"clazz": "com.badlogic.gdx.scenes.scene2d.ui.Label",
 									"name": "default"
 								},
-								"text": "BGM",
+								"text": "bgm",
 								"textAlignment": 8,
 								"ellipsis": false,
 								"ellipsisString": "...",
@@ -151,7 +151,7 @@
 									"clazz": "com.badlogic.gdx.scenes.scene2d.ui.Label",
 									"name": "default"
 								},
-								"text": "SFX",
+								"text": "sfx",
 								"textAlignment": 8,
 								"ellipsis": false,
 								"ellipsisString": "...",
@@ -280,7 +280,7 @@
 				"child": {
 					"class": "TextButton",
 					"name": "bindings",
-					"text": "Edit Key Bindings",
+					"text": "edit key bindings",
 					"style": {
 						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
 						"name": "default"
@@ -326,7 +326,7 @@
 				"child": {
 					"class": "TextButton",
 					"name": "ok",
-					"text": "OK",
+					"text": "ok",
 					"style": {
 						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
 						"name": "default"

@@ -1,2 +1,6 @@
-spine/libgdx.json
-spine/ray3k.json
+spine/breadtron.json
+spine/player.json
+spine/star.json
+spine/wizard-motorcycle.json
+spine/wizard-scooter.json
+spine/wizard.json

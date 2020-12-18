@@ -1,0 +1,52 @@
+{
+"skeleton": {
+	"hash": "CRtnKI2bZ3T13T3e/GqIrD5AdGE",
+	"spine": "3.8.99",
+	"x": -33,
+	"y": -12.2,
+	"width": 67,
+	"height": 71,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/wizard", "bone": "root", "attachment": "game/wizard-walk-3" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -19.38, -3.43, -18.78, 49.37, 34.02, 48.77, 32.82, -4.03 ]
+				}
+			},
+			"game/wizard": {
+				"game/wizard": { "x": 4.02, "y": 49.97, "scaleX": -1, "width": 81, "height": 127 },
+				"game/wizard-walk-1": { "x": 0.5, "y": 23.3, "width": 50, "height": 69 },
+				"game/wizard-walk-2": { "x": 0.5, "y": 23.3, "width": 48, "height": 74 },
+				"game/wizard-walk-3": { "x": 0.5, "y": 23.3, "width": 67, "height": 71 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"game/wizard": {
+				"attachment": [
+					{ "name": "game/wizard-walk-2" },
+					{ "time": 0.1667, "name": "game/wizard-walk-3" },
+					{ "time": 0.3333, "name": "game/wizard-walk-2" }
+				]
+			}
+		}
+	}
+}
+}

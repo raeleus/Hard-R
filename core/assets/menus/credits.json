@@ -51,7 +51,7 @@
 				"child": {
 					"class": "TextButton",
 					"name": "ok",
-					"text": "OK",
+					"text": "ok",
 					"style": {
 						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
 						"name": "default"

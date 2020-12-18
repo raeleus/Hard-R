@@ -1,0 +1,52 @@
+{
+"skeleton": {
+	"hash": "MQBdY14s2PL3RoqTpFnSU2fiE4Q",
+	"spine": "3.8.99",
+	"x": -66.38,
+	"y": -26.53,
+	"width": 130,
+	"height": 111,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "game/wizard-scooter-walk", "parent": "root", "length": 67.21, "rotation": 1.02, "x": -4.38, "y": 0.17 }
+],
+"slots": [
+	{ "name": "game/wizard-scooter-walk", "bone": "game/wizard-scooter-walk", "attachment": "game/wizard-scooter-walk-3" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -42.18, -6.43, -40.98, 43.37, 46.02, 42.77, 41.82, -6.43 ]
+				}
+			},
+			"game/wizard-scooter-walk": {
+				"game/wizard-scooter-walk": { "x": 3.51, "y": 28.74, "rotation": -1.02, "width": 126, "height": 104 },
+				"game/wizard-scooter-walk-2": { "x": 3.51, "y": 28.74, "rotation": -1.02, "width": 133, "height": 107 },
+				"game/wizard-scooter-walk-3": { "x": 3.51, "y": 28.74, "rotation": -1.02, "width": 130, "height": 111 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"bones": {
+			"game/wizard-scooter-walk": {
+				"rotate": [
+					{},
+					{ "time": 0.1667, "angle": 13.5 },
+					{ "time": 0.3333 }
+				]
+			}
+		}
+	}
+}
+}

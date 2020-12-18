@@ -6,18 +6,20 @@ import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.crashinvaders.vfx.effects.ChainVfxEffect;
 import com.ray3k.template.Core.*;
 import com.ray3k.template.*;
+import com.ray3k.template.OgmoReader.*;
 import com.ray3k.template.entities.*;
 import com.ray3k.template.screens.DialogPause.*;
 import com.ray3k.template.vfx.*;
@@ -33,6 +35,7 @@ public class GameScreen extends JamScreen {
     public boolean paused;
     private ChainVfxEffect vfxEffect;
     private Label fpsLabel;
+    public static int levelNum = 1;
     
     @Override
     public void show() {
@@ -40,7 +43,7 @@ public class GameScreen extends JamScreen {
     
         gameScreen = this;
         vfxEffect = new GlitchEffect();
-        vfxManager.addEffect(vfxEffect);
+//        vfxManager.addEffect(vfxEffect);
         BG_COLOR.set(Color.PINK);
     
         paused = false;
@@ -90,15 +93,92 @@ public class GameScreen extends JamScreen {
         viewport = new FitViewport(1024, 576, camera);
     
         entityController.clear();
-        BallTestEntity ballTestEntity = new BallTestEntity();
-        ballTestEntity.moveCamera = true;
-        entityController.add(ballTestEntity);
+        
+        var reader = new OgmoReader();
+        reader.addListener(new OgmoListener() {
+            @Override
+            public void level(String ogmoVersion, int width, int height, int offsetX, int offsetY,
+                              ObjectMap<String, OgmoValue> valuesMap) {
+        
+            }
     
-        for (int i = 0; i < 10; i++) {
-            ballTestEntity = new BallTestEntity();
-            ballTestEntity.setPosition(MathUtils.random(viewport.getWorldWidth()), MathUtils.random(viewport.getWorldHeight()));
-            entityController.add(ballTestEntity);
-        }
+            @Override
+            public void layer(String name, int gridCellWidth, int gridCellHeight, int offsetX, int offsetY) {
+        
+            }
+    
+            @Override
+            public void entity(String name, int id, int x, int y, int width, int height, boolean flippedX,
+                               boolean flippedY, int originX, int originY, int rotation, Array<EntityNode> nodes,
+                               ObjectMap<String, OgmoValue> valuesMap) {
+                switch (name) {
+                    case "wall":
+                        var wall = new WallEntity(x, y - height, width, height);
+                        entityController.add(wall);
+                        break;
+                    case "player":
+                        var player = new PlayerEntity();
+                        player.setPosition(x, y);
+                        entityController.add(player);
+                        break;
+                    case "wizard-motorcycle":
+                        var enemy = new EnemyEntity();
+                        enemy.setPosition(x, y);
+                        entityController.add(enemy);
+                        break;
+                    case "wizard":
+                        var wizard = new WizardEntity();
+                        wizard.setPosition(x, y);
+                        entityController.add(wizard);
+                        break;
+                    case "wizard-scooter":
+                        var scooter = new ScooterEntity();
+                        scooter.setPosition(x, y);
+                        entityController.add(scooter);
+                        break;
+                    case "goal-entity":
+                        var goal = new GoalEntity();
+                        goal.setPosition(x, y);
+                        entityController.add(goal);
+                        break;
+                }
+            }
+    
+            @Override
+            public void grid(int col, int row, int x, int y, int width, int height, int id) {
+        
+            }
+    
+            @Override
+            public void decal(int centerX, int centerY, float scaleX, float scaleY, int rotation, String texture,
+                              String folder) {
+                var decal = new DecalEntity(folder + "/" + Utils.fileName(texture), centerX, centerY);
+                entityController.add(decal);
+            }
+    
+            @Override
+            public void tile(String tileSet, int col, int row, int x, int y, int id) {
+        
+            }
+    
+            @Override
+            public void tile(String tileSet, int col, int row, int x, int y, int tileX, int tileY) {
+        
+            }
+    
+            @Override
+            public void layerComplete() {
+        
+            }
+    
+            @Override
+            public void levelComplete() {
+        
+            }
+        });
+        var file = Gdx.files.internal("levels/level" + levelNum + ".json");
+        if (file.exists()) reader.readFile(file);
+        else core.transition(new MenuScreen());
     }
     
     @Override
@@ -130,11 +210,6 @@ public class GameScreen extends JamScreen {
         batch.begin();
         viewport.apply();
         batch.setProjectionMatrix(camera.combined);
-        shapeDrawer.setColor(isBindingPressed(Binding.LEFT) && isBindingPressed(Binding.UP) ? Color.ORANGE : Color.GREEN);
-        shapeDrawer.filledRectangle(0, 0, viewport.getWorldWidth(), viewport.getWorldHeight());
-        shapeDrawer.setColor(Color.BLUE);
-        shapeDrawer.setDefaultLineWidth(10);
-        shapeDrawer.rectangle(0, 0, viewport.getWorldWidth(), viewport.getWorldHeight());
         entityController.draw(paused ? 0 : delta);
         batch.end();
         vfxManager.endInputCapture();

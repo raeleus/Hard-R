@@ -108,6 +108,6 @@ project(":core") {
         api "com.badlogicgames.gdx:gdx-controllers:$gdxVersion"
         api "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         api 'com.github.raeleus:stripe:master-SNAPSHOT'
-        implementation 'com.github.tommyettinger:jbump:v1.0.0'
+        api 'com.github.tommyettinger:jbump:v1.0.0'
     }
 }

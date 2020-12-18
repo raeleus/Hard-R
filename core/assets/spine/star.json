@@ -1,0 +1,61 @@
+{
+"skeleton": {
+	"hash": "vtnvUjdDq7w8XWZS08oq4M044SU",
+	"spine": "3.8.99",
+	"x": -12.23,
+	"y": -14.1,
+	"width": 25.06,
+	"height": 26.74,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "game/player", "parent": "root", "length": 24.31, "rotation": 0.88, "x": -0.27, "y": -0.07 }
+],
+"slots": [
+	{ "name": "game/player", "bone": "game/player", "attachment": "game/player" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -9.78, -11.23, -8.58, 9.77, 15.42, 9.17, 14.82, -11.23 ]
+				}
+			},
+			"game/player": {
+				"game/player": {
+					"type": "mesh",
+					"uvs": [ 0.58041, 0.85461, 0.64495, 0.67566, 0.67308, 0.67365, 0.70452, 0.76614, 0.78892, 0.75206, 0.80216, 0.78424, 0.74258, 0.96118, 0.5953, 0.90689 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3, 7, 0, 3, 5, 6, 3, 5, 3, 4, 7, 3, 6 ],
+					"vertices": [ -12.03, -3.93, -4.48, 12.6, -1.3, 12.74, 2.12, 4.08, 11.68, 5.24, 13.13, 2.23, 6.14, -14.12, -10.42, -8.82 ],
+					"hull": 8,
+					"edges": [ 0, 2, 2, 4, 4, 6, 6, 8, 8, 10, 10, 12, 12, 14, 0, 14 ],
+					"width": 113,
+					"height": 93
+				}
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"bones": {
+			"game/player": {
+				"rotate": [
+					{},
+					{ "time": 0.1333, "angle": -90 },
+					{ "time": 0.2667, "angle": 178.33 },
+					{ "time": 0.3667, "angle": 89.16 },
+					{ "time": 0.5 }
+				]
+			}
+		}
+	}
+}
+}

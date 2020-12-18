@@ -117,13 +117,13 @@ public class DialogEditKeyBindings extends Dialog {
         
         getButtonTable().pad(5);
         getButtonTable().defaults().uniform().fill().space(10);
-        TextButton textButton = new TextButton("OK", skin);
+        TextButton textButton = new TextButton("ok", skin);
         button(textButton);
         focusables.add(textButton);
         textButton.addListener(sndChangeListener);
         textButton.addListener(mouseEnterListener);
         
-        textButton = new TextButton("Defaults", skin);
+        textButton = new TextButton("defaults", skin);
         getButtonTable().add(textButton);
         focusables.add(textButton);
         textButton.addListener(sndChangeListener);
@@ -148,7 +148,7 @@ public class DialogEditKeyBindings extends Dialog {
         for (Binding binding : JamScreen.getBindings()) {
             String codeName = JamScreen.getBindingCodeName(binding);
             
-            TextButton textButton = new TextButton(binding.toString() + " : " + codeName, skin);
+            TextButton textButton = new TextButton(binding.toString().toLowerCase() + " : " + codeName.toLowerCase(), skin);
             table.add(textButton);
             table.row();
             focusables.add(textButton);
@@ -299,11 +299,11 @@ public class DialogEditKeyBindings extends Dialog {
             setFillParent(true);
             Table root = getContentTable();
             
-            text("Input any key, mouse button, scroll wheel, or controller button to set");
+            text("input any key, mouse button, scroll wheel, or controller button to set");
             root.row();
             text(binding.toString());
             root.row();
-            text("(Press ESCAPE to cancel)");
+            text("(press escape to cancel)");
             root.row();
             text("...");
             

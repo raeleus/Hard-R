@@ -11,8 +11,8 @@
 						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.Label",
 						"name": "default"
 					},
-					"text": "CLICK HERE TO PLAY",
-					"textAlignment": 8,
+					"text": "click here\\nto play",
+					"textAlignment": 1,
 					"ellipsis": false,
 					"ellipsisString": "...",
 					"wrap": false,

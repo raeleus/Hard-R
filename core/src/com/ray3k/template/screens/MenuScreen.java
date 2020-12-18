@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.ray3k.template.*;
 
@@ -29,7 +30,7 @@ public class MenuScreen extends JamScreen {
             bgm.setLooping(true);
         }
         
-        stage = new Stage(new ScreenViewport(), batch);
+        stage = new Stage(new FitViewport(1340, 576), batch);
         Gdx.input.setInputProcessor(stage);
     
         sceneBuilder.build(stage, skin, Gdx.files.internal("menus/main.json"));
@@ -39,6 +40,7 @@ public class MenuScreen extends JamScreen {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 Gdx.input.setInputProcessor(null);
+                GameScreen.levelNum = 1;
                 core.transition(new GameScreen());
             }
         });

@@ -1,0 +1,65 @@
+{
+"skeleton": {
+	"hash": "P3LTyD3ONyff/M7QtBILykuUwsw",
+	"spine": "3.8.99",
+	"x": -109.73,
+	"y": -77.78,
+	"width": 214.52,
+	"height": 206.42,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "game/wizard-motorcycle", "parent": "root", "length": 126.18, "rotation": 10.31, "x": -64.38, "y": -3.43 }
+],
+"slots": [
+	{ "name": "game/wizard-motorcycle", "bone": "game/wizard-motorcycle", "attachment": "game/wizard-motorcycle" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -71.58, -2.23, -69.78, 68.57, 69.42, 66.77, 68.82, -1.03 ]
+				}
+			},
+			"game/wizard-motorcycle": {
+				"game/wizard-motorcycle": { "x": 65.57, "y": 19.16, "rotation": -35.13, "width": 166, "height": 148 },
+				"game/wizard-motorcycle-laser": { "x": 81.62, "y": 23.07, "rotation": -35.13, "width": 149, "height": 164 },
+				"game/wizard-motorcycle-laser-2": { "x": 94.11, "y": 3.28, "rotation": -35.13, "width": 241, "height": 164 },
+				"game/wizard-motorcycle-laser-3": { "x": 132.45, "y": -9.14, "rotation": -35.13, "width": 318, "height": 191 }
+			}
+		}
+	}
+],
+"animations": {
+	"attack": {
+		"slots": {
+			"game/wizard-motorcycle": {
+				"attachment": [
+					{ "time": 0.0667, "name": "game/wizard-motorcycle-laser" },
+					{ "time": 0.1333, "name": "game/wizard-motorcycle-laser-2" },
+					{ "time": 0.1667, "name": "game/wizard-motorcycle-laser-3" },
+					{ "time": 0.2333, "name": "game/wizard-motorcycle" }
+				]
+			}
+		}
+	},
+	"stand": {
+		"bones": {
+			"game/wizard-motorcycle": {
+				"rotate": [
+					{},
+					{ "time": 0.1667, "angle": -4.02 },
+					{ "time": 0.3333 }
+				]
+			}
+		}
+	}
+}
+}

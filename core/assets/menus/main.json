@@ -5,10 +5,18 @@
 		"cells": [
 			{
 				"child": {
-					"class": "Image",
+					"class": "Label",
 					"name": null,
-					"drawable": "libgdx-animation",
-					"scaling": "none",
+					"style": {
+						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.Label",
+						"name": "default"
+					},
+					"text": "hard r",
+					"textAlignment": 8,
+					"ellipsis": false,
+					"ellipsisString": "...",
+					"wrap": false,
+					"color": null,
 					"touchable": "enabled",
 					"visible": true
 				},
@@ -18,10 +26,10 @@
 				"padRight": 0,
 				"padTop": 0,
 				"padBottom": 0,
-				"spaceLeft": 30,
-				"spaceRight": 30,
-				"spaceTop": 30,
-				"spaceBottom": 30,
+				"spaceLeft": 0,
+				"spaceRight": 0,
+				"spaceTop": 0,
+				"spaceBottom": 0,
 				"expandX": false,
 				"expandY": false,
 				"fillX": false,
@@ -43,7 +51,7 @@
 				"child": {
 					"class": "TextButton",
 					"name": "play",
-					"text": "Play",
+					"text": "play",
 					"style": {
 						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
 						"name": "default"
@@ -89,7 +97,7 @@
 				"child": {
 					"class": "TextButton",
 					"name": "options",
-					"text": "Options",
+					"text": "options",
 					"style": {
 						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
 						"name": "default"
@@ -135,7 +143,7 @@
 				"child": {
 					"class": "TextButton",
 					"name": "credits",
-					"text": "Credits",
+					"text": "credits",
 					"style": {
 						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
 						"name": "default"
@@ -185,8 +193,8 @@
 						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.Label",
 						"name": "default"
 					},
-					"text": "Copyright Raymond \"Raeleus\" Buckley © 2020",
-					"textAlignment": 8,
+					"text": "copyright\\nraymond \"raeleus\" buckley",
+					"textAlignment": 1,
 					"ellipsis": false,
 					"ellipsisString": "...",
 					"wrap": false,
@@ -223,7 +231,7 @@
 			}
 		],
 		"name": null,
-		"background": null,
+		"background": "bg",
 		"color": null,
 		"padLeft": 0,
 		"padRight": 0,

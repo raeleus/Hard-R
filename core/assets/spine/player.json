@@ -1,0 +1,64 @@
+{
+"skeleton": {
+	"hash": "DCNrB4r4kMTbm55kI+2Oeyhehso",
+	"spine": "3.8.99",
+	"x": -61.92,
+	"y": -12.65,
+	"width": 113,
+	"height": 93,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "game/player", "parent": "root", "length": 57.03, "rotation": 90.4, "x": -1.15, "y": 9.07 }
+],
+"slots": [
+	{ "name": "game/player", "bone": "game/player", "attachment": "game/player" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -29.58, -2.23, -28.98, 63.17, 30.42, 62.57, 31.02, -1.63 ]
+				}
+			},
+			"game/player": {
+				"game/player": { "x": 24.81, "y": 4.1, "scaleX": -1, "rotation": -90.4, "width": 113, "height": 93 }
+			}
+		}
+	}
+],
+"animations": {
+	"attack": {
+		"bones": {
+			"game/player": {
+				"rotate": [
+					{},
+					{ "time": 0.1, "angle": 74.89 },
+					{ "time": 0.1667, "angle": -10.24 },
+					{ "time": 0.2667, "angle": -113.62 },
+					{ "time": 0.3667 }
+				]
+			}
+		}
+	},
+	"stand": {},
+	"walk": {
+		"bones": {
+			"game/player": {
+				"rotate": [
+					{ "angle": 23.9 },
+					{ "time": 0.2667, "angle": -13.99 },
+					{ "time": 0.5, "angle": 23.9 }
+				]
+			}
+		}
+	}
+}
+}
